@@ -1,0 +1,20 @@
+﻿<Window x:Class="MouseFakeTouchSlidingDemo.TestSlideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MouseFakeTouchSlidingDemo"
+        mc:Ignorable="d"
+        Title="TestSlideWindow" Height="450" Width="800" x:Name="TheTestSlideWindow"
+        PreviewTouchDown="TestTouchWindow_OnPreviewTouchDown" PreviewTouchUp="TestTouchWindow_OnPreviewTouchUp"
+        TouchDown="TestTouchWindow_OnTouchDown" TouchUp="TestTouchWindow_OnTouchUp"
+        PreviewStylusDown="TestTouchWindow_OnPreviewStylusDown" PreviewStylusUp="TestTouchWindow_OnPreviewStylusUp"
+        StylusDown="TestTouchWindow_OnStylusDown" StylusUp="TestTouchWindow_OnStylusUp"
+        MouseDown="TestTouchWindow_OnMouseDown" MouseUp="TestTouchWindow_OnMouseUp"
+        PreviewMouseDown="TestTouchWindow_OnPreviewMouseDown" PreviewMouseUp="TestTouchWindow_OnPreviewMouseUp"
+        ManipulationStarted="TestTouchWindow_OnManipulationStarted" ManipulationCompleted="TestTouchWindow_OnManipulationCompleted"
+        ManipulationDelta="TestTouchWindow_OnManipulationDelta">
+    <Grid>
+        <ListBox ItemsSource="{Binding ElementName=TheTestSlideWindow,Path=ItemsSource}"></ListBox>
+    </Grid>
+</Window>
