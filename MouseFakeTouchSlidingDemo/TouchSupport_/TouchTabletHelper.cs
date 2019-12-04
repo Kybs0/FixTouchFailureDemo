@@ -80,8 +80,6 @@ namespace MouseFakeTouchSlidingDemo
                     return;
                 }
 
-                _lasTabletDeviceId = Tablet.CurrentTabletDevice.Id;
-
                 while (Tablet.TabletDevices.Count > 0)
                 {
                     // Only in .Net Framework 4.5.2 - see https://connect.microsoft.com/VisualStudio/Feedback/Details/1016534

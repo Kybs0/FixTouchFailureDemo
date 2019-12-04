@@ -61,7 +61,6 @@ namespace MouseFakeTouchSlidingDemo
             DisableWpfTouch();
             //注册触摸消息
             TouchNativeMethods.RegisterTouchWindow(hWnd, TouchNativeMethods.TWF_WANTPALM);
-            TouchTabletHelper.ReOpenWPFTabletSuttport();
             //监听窗口触摸消息
             var source = HwndSource.FromHwnd(hWnd);
             Debug.Assert(source != null);
@@ -92,8 +91,8 @@ namespace MouseFakeTouchSlidingDemo
                     {
                         var input = inputs[i];
                         //FakeTouchInputToPenContext0(window, input, inputCount);
-                        FakeTouchInputToPenContext1(window, input, inputCount);
-                        //FakeTouchInputToWindow(window, input);
+                        //FakeTouchInputToPenContext1(window, input, inputCount);
+                        FakeTouchInputToWindow(window, input);
                     }
                 }
 
