@@ -29,6 +29,15 @@ namespace MouseFakeTouchSlidingDemo
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            Loaded += InitTouchSupport;
+        }
+
+        private void InitTouchSupport(object sender, RoutedEventArgs e)
+        {
+            if (TouchSupportOperationHelper.HasDisabledTouch & TouchSupportOperationHelper.HasOpenedTouchFix)
+            {
+                TouchSupportOperationHelper.RegisterMessageTouch(this);
+            }
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -41,10 +50,9 @@ namespace MouseFakeTouchSlidingDemo
             var isChecked = DisableTouchCheckBox.IsChecked ?? false;
             if (isChecked)
             {
-                //TouchSupportOperationHelper.DisableWpfTouch();
+                TouchSupportOperationHelper.DisableWpfTouch();
                 DisableTouchCheckBox.IsEnabled = false;
             }
-            var isTouch = TouchNativeMethods.IsTouchWindow(new WindowInteropHelper(this).Handle, 0x00000002);
         }
 
         private void OpenTouchCheckBox_OnClick(object sender, RoutedEventArgs e)
